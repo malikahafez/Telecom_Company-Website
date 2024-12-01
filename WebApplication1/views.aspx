@@ -9,6 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Button ID="BackButton" runat="server" OnClick="backToHomepage" Text="Back to Homepage" />
+            <br />
             <asp:Label ID="Instructions" runat="server" Text="Choose what you would like to view:"></asp:Label>
         </div>
         <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="selectView" AutoPostBack="true">

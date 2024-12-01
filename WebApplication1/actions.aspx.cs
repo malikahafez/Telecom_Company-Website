@@ -13,5 +13,9 @@ namespace WebApplication1
         {
 
         }
+        protected void backToHomepage(object sender, EventArgs e)
+        {
+            Response.Redirect("admin_homepage.aspx");
+        }
     }
 }
