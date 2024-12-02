@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="actions.aspx" />
     <Content Include="admin_homepage.aspx" />
+    <Content Include="customer_homepage.aspx" />
     <Content Include="lists.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="views.aspx" />
@@ -88,6 +89,13 @@
     </Compile>
     <Compile Include="admin_homepage.aspx.designer.cs">
       <DependentUpon>admin_homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer_homepage.aspx.cs">
+      <DependentUpon>customer_homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer_homepage.aspx.designer.cs">
+      <DependentUpon>customer_homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="lists.aspx.cs">
       <DependentUpon>lists.aspx</DependentUpon>
