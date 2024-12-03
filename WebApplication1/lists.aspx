@@ -16,6 +16,7 @@
                 <asp:ListItem Value = "0" Text = "Choose what to list" > </asp:ListItem>
                 <asp:ListItem Value  = "Accounts subscribed to a plan" Text ="Accounts subscribed to a plan" ></asp:ListItem>
                 <asp:ListItem Value = "SMS offers of an account" Text = "SMS offers of an account" ></asp:ListItem>
+                <asp:ListItem Value ="Account Total Usage on All Subscribed Plans" Text ="Account Total Usage on All Subscribed Plans"></asp:ListItem>
             </asp:DropDownList>
             <br />
             <asp:label ID = "Input1" runat="server" Text = "Input Plan ID" Visible =" false" ></asp:label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

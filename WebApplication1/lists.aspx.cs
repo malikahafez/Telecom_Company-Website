@@ -41,6 +41,12 @@ namespace WebApplication1
 
                 execAccSMS(sender, e);
             }
+            else if(DropDownList2.SelectedValue == "Account Total Usage on All Subscribed Plans")
+            {
+                Input1.Text = "Input Account Mobile Number";
+                Input2.Text = "Input Date";
+                execAccUsagePlan(sender, e);
+            }
             else
             {
                 Input1.Visible = false;
@@ -91,7 +97,6 @@ namespace WebApplication1
             planID.Visible = true;
             DateORacc.Visible = false;
             Input1.Visible = true;
-            Input1.Text = "Input Account Mobile Number";
             Input2.Visible = false;
             Button1.Visible = true;
             string mobileNo = planID.Text;
@@ -112,33 +117,52 @@ namespace WebApplication1
             planID.Text = "";
             conn.Close();
         }
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void execAccUsagePlan(object sender, EventArgs e)
         {
-            if (Input2.Text == "Input Date") {
-                Response.Write("Listing all customer accounts subscribed to the given plan on the given date...");
-                string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
+            string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
-            string date = DateORacc.Text;
-            string planid = planID.Text;
-            string tvfCMD = "select * from dbo.Account_Plan_date('" + date + "'," + planid + ")";
-            //string tvfCMD = "select * from dbo.Account_Plan_date('2023-06-15',1)";
+            planID.Visible = true;
+            DateORacc.Visible = true;
+            Input1.Visible = true;
 
-            SqlCommand accounts = new SqlCommand(tvfCMD, conn);
-                try
-                {
-                    //accounts.CommandType = System.Data.CommandType.StoredProcedure;
-                    SqlDataReader rdr = accounts.ExecuteReader();
-                    GridView2.DataSource = rdr;
-                    GridView2.DataBind();
-                }
-                catch (System.Data.SqlClient.SqlException)
-                {
-                    Response.Write("<br/>Plan ID must be an integer less than 11 digits");
-                }
+            Input2.Visible = true;
+
+            Button1.Visible = true;
+            string mobileNo = planID.Text;
+            string from_date = DateORacc.Text;
+            GridView2.DataSource = null;
+            GridView2.DataBind();
+            planID.Text = "";
             conn.Close();
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (Input1.Text == "Input Plan ID" && Input2.Text == "Input Date") {
+                Response.Write("Listing all customer accounts subscribed to the given plan on the given date...");
+                string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
+                SqlConnection conn = new SqlConnection(connStr);
+                conn.Open();
+                string date = DateORacc.Text;
+                string planid = planID.Text;
+                string tvfCMD = "select * from dbo.Account_Plan_date('" + date + "'," + planid + ")";
+                //string tvfCMD = "select * from dbo.Account_Plan_date('2023-06-15',1)";
+
+                SqlCommand accounts = new SqlCommand(tvfCMD, conn);
+                    try
+                    {
+                        //accounts.CommandType = System.Data.CommandType.StoredProcedure;
+                        SqlDataReader rdr = accounts.ExecuteReader();
+                        GridView2.DataSource = rdr;
+                        GridView2.DataBind();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        Response.Write("<br/>Plan ID must be an integer less than 11 digits");
+                    }
+                conn.Close();
             }
-            else 
+            else if(Input1.Text == "Input Account Mobile Number" && Input2.Text == "Input Account ID")
             {
                 Response.Write("Listing all SMS offers for the given account and given plan...");
 
@@ -156,6 +180,37 @@ namespace WebApplication1
                 GridView2.DataSource = rdr;
                 GridView2.DataBind();
                 conn.Close();
+            }
+            else if(Input1.Text =="Input Account Mobile Number" && Input2.Text == "Input Date")
+            {
+                Response.Write("Listing total usage on all subscribed plans for the given account and from the given date...");
+
+                string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
+                SqlConnection conn = new SqlConnection(connStr);
+                conn.Open();
+                string mobileNo = planID.Text;
+                string date = DateORacc.Text;
+                string tvfCMD = "select * from dbo.Account_Usage_Plan ('" + mobileNo + "','"+date+"')";
+                //string tvfCMD = select * from dbo.Account_Usage_Plan ('01234567895', '2023-05-01');
+
+                SqlCommand usage = new SqlCommand(tvfCMD, conn);
+
+                //accounts.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader rdr = usage.ExecuteReader();
+                GridView2.DataSource = rdr;
+                GridView2.DataBind();
+                conn.Close();
+
+            }
+            else
+            {
+                Input1.Visible = false;
+                Input2.Visible = false;
+                Button1.Visible = false;
+                planID.Visible = false;
+                DateORacc.Visible = false;
+                GridView2.DataSource = null;
+                GridView2.DataBind();
             }
 
         }
