@@ -19,11 +19,11 @@
                 <asp:ListItem Value ="Account Total Usage on All Subscribed Plans" Text ="Account Total Usage on All Subscribed Plans"></asp:ListItem>
             </asp:DropDownList>
             <br />
-            <asp:label ID = "Input1" runat="server" Text = "Input Plan ID" Visible =" false" ></asp:label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:label ID = "Input1" runat="server" Text = "Input Plan ID" Visible =" false" ></asp:label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID = "Input2" runat="server" Text ="Input" Visible =" false"></asp:Label>
             <br />
             <asp:TextBox ID="planID" runat="server" Visible =" false"></asp:TextBox>
-            <asp:TextBox ID="DateORacc" runat="server" Visible =" false"></asp:TextBox>
+            <asp:TextBox ID="DateORacc" runat="server" Visible =" false" style="margin-left: 88px" Width="207px"></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Go" Visible ="false" />
             <br />
             <asp:GridView ID="GridView2" runat="server" Width="500px">
