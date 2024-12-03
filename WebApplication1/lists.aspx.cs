@@ -125,11 +125,17 @@ namespace WebApplication1
             //string tvfCMD = "select * from dbo.Account_Plan_date('2023-06-15',1)";
 
             SqlCommand accounts = new SqlCommand(tvfCMD, conn);
-
-            //accounts.CommandType = System.Data.CommandType.StoredProcedure;
-            SqlDataReader rdr = accounts.ExecuteReader();
-            GridView2.DataSource = rdr;
-            GridView2.DataBind();
+                try
+                {
+                    //accounts.CommandType = System.Data.CommandType.StoredProcedure;
+                    SqlDataReader rdr = accounts.ExecuteReader();
+                    GridView2.DataSource = rdr;
+                    GridView2.DataBind();
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    Response.Write("<br/>Plan ID must be an integer less than 11 digits");
+                }
             conn.Close();
             }
             else 
