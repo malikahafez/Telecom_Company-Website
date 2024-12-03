@@ -71,11 +71,16 @@
     <Content Include="Adminpt2.aspx" />
     <Content Include="admin_homepage.aspx" />
     <Content Include="cashback.aspx" />
+    <Content Include="cashwalletplan.aspx" />
+    <Content Include="checkwallet.aspx" />
     <Content Include="customer_homepage.aspx" />
     <Content Include="E_shops.aspx" />
+    <Content Include="input_avgtransactions.aspx" />
+    <Content Include="input_for _transactions.aspx" />
     <Content Include="lists.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="payments.aspx" />
+    <Content Include="updatepoints.aspx" />
     <Content Include="views.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -106,6 +111,18 @@
     <Compile Include="cashback.aspx.designer.cs">
       <DependentUpon>cashback.aspx</DependentUpon>
     </Compile>
+    <Compile Include="cashwalletplan.aspx.cs">
+      <DependentUpon>cashwalletplan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cashwalletplan.aspx.designer.cs">
+      <DependentUpon>cashwalletplan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="checkwallet.aspx.cs">
+      <DependentUpon>checkwallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="checkwallet.aspx.designer.cs">
+      <DependentUpon>checkwallet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="customer_homepage.aspx.cs">
       <DependentUpon>customer_homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +135,18 @@
     </Compile>
     <Compile Include="E_shops.aspx.designer.cs">
       <DependentUpon>E_shops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="input_avgtransactions.aspx.cs">
+      <DependentUpon>input_avgtransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="input_avgtransactions.aspx.designer.cs">
+      <DependentUpon>input_avgtransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="input_for _transactions.aspx.cs">
+      <DependentUpon>input_for _transactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="input_for _transactions.aspx.designer.cs">
+      <DependentUpon>input_for _transactions.aspx</DependentUpon>
     </Compile>
     <Compile Include="lists.aspx.cs">
       <DependentUpon>lists.aspx</DependentUpon>
@@ -140,6 +169,12 @@
       <DependentUpon>payments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="updatepoints.aspx.cs">
+      <DependentUpon>updatepoints.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="updatepoints.aspx.designer.cs">
+      <DependentUpon>updatepoints.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views.aspx.cs">
       <DependentUpon>views.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

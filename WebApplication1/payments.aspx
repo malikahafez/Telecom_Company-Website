@@ -20,8 +20,7 @@
                 <asp:BoundField DataField="mobileNo" HeaderText="mobileNo" SortExpression="mobileNo" />
             </Columns>
         </asp:GridView>
-        <asp:Button ID="Button1" runat="server" OnClientClick="goback" Text="Back_to_HomePage" Width="102px" />
-        <asp:Button ID="Button2" runat="server" OnClientClick="totalcashbck" Text="Display_CashBack" Width="132px" />
+        <asp:Button ID="Button1" runat="server" OnClientClick="goback" Text="Back_to_HomePage" Width="139px" />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Milestone2DB_24ConnectionString %>" SelectCommand="SELECT * FROM [AccountPayments]"></asp:SqlDataSource>
     </form>
 </body>
