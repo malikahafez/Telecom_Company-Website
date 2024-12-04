@@ -915,7 +915,7 @@ select * from dbo.Account_Usage_Plan ('01234567895', '2023-05-01')
 Exec Benefits_Account @mobile_num ='01234567891', @plan_id = 1 
 -------------------Account_SMS_Offers function execution---------------------------------------------------------------------------------
 
-select * from dbo.Account_SMS_Offers ('01234567891')
+select * from dbo.Account_SMS_Offers ('12345678901')
 
 -----------------------Account_Payment_Points Procedure execution----------------------------------
 Exec Account_Payment_Points @mobile_num ='01234567891'
@@ -1092,7 +1092,7 @@ VALUES
 ( 1, 100, 50, 500),
 ( 2, 200, 100, 1000),
 ( 3, 300, 150, 1500);
-
+select* from Exclusive_offer;
 INSERT INTO Cashback ( benefitID, walletID, amount, credit_date)
 VALUES 
 ( 4, 1, 10, '2023-06-30'),

@@ -13,14 +13,14 @@
             <br />
             <asp:Label ID="Instructions" runat="server" Text="Choose what you would like to view:"></asp:Label>
         </div>
-        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="selectView" AutoPostBack="true">
+        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="selectView" AutoPostBack="true" Width="400px">
             <asp:ListItem Value = "0" Text = "Choose a view"></asp:ListItem>
             <asp:ListItem Value = "Customer Profiles + Active Accounts" Text ="Customer Profiles + Active Accounts"> </asp:ListItem>
             <asp:ListItem Value = "Physical Stores + Vouchers" Text = "Physical Stores + Vouchers"></asp:ListItem>
             <asp:ListItem Value ="Resolved Tickets" Text ="Resolved Tickets"></asp:ListItem>
             <asp:ListItem Value = "Accounts + Subscribed Plans" Text ="Accounts + Subscribed Plans"></asp:ListItem>
         </asp:DropDownList>
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="GridView1" runat="server" Width="500px">
         </asp:GridView>
     </form>
 </body>
