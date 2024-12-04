@@ -24,7 +24,7 @@ namespace DBM3
         
         protected void viewamt(object sender, EventArgs e)
         {
-            String connStr = WebConfigurationManager.ConnectionStrings["MyDB"].ToString();
+            String connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
 
 

@@ -25,7 +25,35 @@ namespace DBM3
         {
 
 
-            GridView1.DataBind();
+            string query = "SELECT COUNT(*) FROM customer_account WHERE mobileNo = @mobileNo";
+
+            // Check if the number exists
+            SqlConnection conn = new SqlConnection(connStr);
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            // Add the parameter to prevent SQL injection
+            cmd.Parameters.Add(new SqlParameter("@mobileNo", mobileNumber));
+
+
+            conn.Open();
+            object result = cmd.ExecuteScalar(); // ExecuteScalar returns an object
+
+            // Check if result is null or DBNull before casting
+            int count = result != null && result != DBNull.Value ? Convert.ToInt32(result) : 0;
+            // Get the count of matching rows
+
+            if (count > 0)
+            {
+                GridView1.DataBind();
+            }
+            else
+            {
+                Response.Write("Please enter a valid mobile number");
+
+            }
+            conn.Close();
+
 
         }
     }

@@ -42,14 +42,21 @@ namespace DBM3
 
                     conn.Open();
                     object res = Checkwallet.ExecuteScalar();
-                    
-
-                    
+                    if (string.IsNullOrEmpty(res.ToString()))
+                    {
+                        Response.Write("Please enter a valid mobile number");
+                    }
+                    else
+                    {
                         if (res is bool bitValue)
+                        {
                             Label1.Text = "The mobile number is linked to a wallet";
+                        }
                         else
+                        {
                             Label1.Text = "The mobile number is not linked to a wallet";
-                   
+                        }
+                    }
                 }
             }
             catch (SqlException ex)

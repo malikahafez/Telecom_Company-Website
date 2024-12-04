@@ -32,7 +32,15 @@ namespace DBM3
             viewamt.Parameters.Add(new SqlParameter("@planID", planID)); 
             conn.Open();
             object res = viewamt.ExecuteScalar();
-            Label1.Text = "Cashback Amount :" + res.ToString();
+            if (string.IsNullOrEmpty(res.ToString()))
+            {
+                Response.Write("Please enter a valid walletID or planID");
+            }
+            else
+            {
+                Label1.Text = "Cashback Amount :" + res.ToString();
+            }
+           
 
             conn.Close();
             
