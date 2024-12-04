@@ -45,6 +45,12 @@ namespace WebApplication1
                 Response.Redirect("customer_homepage.aspx?phoneNumber=" + mobile);
 
             }
+            else
+            {
+                // Login failed: show an alert message
+                string script = "alert('Invalid mobile number or password. Please try again.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "LoginAlert", script, true);
+            }
         }
     }
 }

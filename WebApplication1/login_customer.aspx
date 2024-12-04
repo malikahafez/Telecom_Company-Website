@@ -25,6 +25,7 @@
         <asp:Label ID="password_label" runat="server" Text="Password"></asp:Label>
         <br />
         <input type="password" id="PasswordInput" name="PasswordInput">
+        <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
 
         <br />
         <br />

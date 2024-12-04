@@ -15,8 +15,8 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           //string mob = Session["mob"] as string;
-           string mobile = "12345678901";
+            //string mob = Session["mob"] as string;
+            string mobile = Session["mobile_num"] as string;
             if (!IsPostBack)
             {
                 LoadServicePlans(mobile); 
@@ -30,8 +30,7 @@ namespace WebApplication1
              SqlCommand ser = new SqlCommand(query, conn);
             
                 
-            ser.Parameters.Add( new SqlParameter("@MobileNo", customernumber));
-
+        
             Panel container = new Panel();
 
             conn.Open();

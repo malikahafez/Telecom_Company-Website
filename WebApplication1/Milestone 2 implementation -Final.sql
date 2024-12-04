@@ -683,7 +683,7 @@ select v.voucherID from voucher v
 where v.mobileNo = @mobile_num and v.value = @max
 
 go
-
+exec [Account_Highest_Voucher] 12345678901
 
 --//////////////////////////////////////////////////////////////////////////////////////////////////////
 ------------------------------------------------------------------------------------------------------------
@@ -726,6 +726,10 @@ set @output = dbo.function_extra_amount(@payment_id,@plan_id)
 return @output
 END
 go
+
+select*from process_payment
+select*from Payment
+select*from customer_account
 
 --//////////////////////////////////////////////////////////////////////////////////////////////////////
 ------------------------------------------------------------------------------------------------------------
@@ -956,7 +960,7 @@ select * from dbo.Consumption (1, '2023-01-01','2023-01-31')
 
 -----------------------Unsubscribed_Plans Procedure execution----------------------------------
 
-Exec Unsubscribed_Plans @mobile_num = '01234567890'
+Exec Unsubscribed_Plans @mobile_num = '012345678903'
 
 -------------------Usage_Plan_CurrentMonth function execution---------------------------------------------------------------------------------
 
@@ -1139,3 +1143,5 @@ VALUES
 
 UPDATE Technical_support_ticket set status = 'Resolved' where mobileNo = '12345678901' and Issue_description = 'Internet not working'; 
 go
+
+
