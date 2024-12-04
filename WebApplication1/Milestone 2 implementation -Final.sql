@@ -915,7 +915,7 @@ select * from dbo.Account_Usage_Plan ('01234567895', '2023-05-01')
 Exec Benefits_Account @mobile_num ='01234567891', @plan_id = 1 
 -------------------Account_SMS_Offers function execution---------------------------------------------------------------------------------
 
-select * from dbo.Account_SMS_Offers ('01234567891')
+select * from dbo.Account_SMS_Offers ('12345678901')
 
 -----------------------Account_Payment_Points Procedure execution----------------------------------
 Exec Account_Payment_Points @mobile_num ='01234567891'
@@ -1035,17 +1035,16 @@ select * from Service_Plan
 
 INSERT INTO Subscription (mobileNo, planID, subscription_date, status)
 VALUES 
-('12345678901', 1, '2023-06-15', 'Active'),
-('12345678901', 2, '2023-07-20', 'Onhold'),
-('12345678902', 2, '2023-06-10', 'Active'),
-('12345678903', 3, '2023-07-01', 'Active');
+('12345678901', 4, '2024-08-15', 'Active'),
+('12345678901', 5, '2024-07-20', 'Active'),
+('12345678902', 6, '2023-06-10', 'Active'),
+('12345678903', 6, '2023-07-01', 'Active');
 
 INSERT INTO Plan_Usage ( start_date, end_date, data_consumption, minutes_used, SMS_sent, mobileNo, planID)
 VALUES 
-( '2023-06-15', '2023-06-30', 500, 200, 50, '12345678901', 1),
-( '2023-07-15', '2023-07-31', 800, 350, 80, '12345678901', 2),
-('2023-06-10', '2023-06-25', 600, 250, 60, '12345678902', 2),
-('2023-07-05', '2023-07-20', 1200, 450, 100, '12345678903', 3);
+( '2024-09-15', '2024-10-30', 500, 200, 50, '12345678901', 1),
+( '2024-08-15', '2024-09-27', 800, 350, 80, '12345678901', 2),
+('2024-06-05', '2024-11-20', 1200, 450, 100, '12345678901', 3);
 
 INSERT INTO Payment ( amount, date_of_payment, payment_method, status, mobileNo)
 VALUES 
@@ -1053,8 +1052,7 @@ VALUES
 ( 20.0, '2023-07-15', 'Cash', 'Pending', '12345678901'),
 ( 30.0, '2023-06-10', 'Credit', 'Rejected', '12345678902'),
 ( 50.0, '2023-07-10', 'Cash', 'Successful', '12345678903');
-select *from Payment
-select *from Process_Payment
+
 INSERT INTO Process_Payment (paymentID, planID)
 VALUES 
 (2, 1),
@@ -1087,21 +1085,21 @@ VALUES
 ( 3, 100, 4),
 (4, 200, 5);
 
-select * from Benefits
+
 
 INSERT INTO Exclusive_Offer ( benefitID, internet_offered, SMS_offered, minutes_offered)
 VALUES 
 ( 1, 100, 50, 500),
 ( 2, 200, 100, 1000),
 ( 3, 300, 150, 1500);
-
+select* from Exclusive_offer;
 INSERT INTO Cashback ( benefitID, walletID, amount, credit_date)
 VALUES 
 ( 4, 1, 10, '2023-06-30'),
 ( 2, 2, 20, '2023-07-15'),
 ( 1, 3, 30, '2023-07-20'),
 ( 3, 1, 50, '2023-07-25');
-select *from Cashback
+
 
 INSERT INTO Plan_Provides_Benefits (benefitID, planID)
 VALUES 

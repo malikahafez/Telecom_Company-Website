@@ -72,15 +72,16 @@ namespace WebApplication1
                 GridView1.DataBind();
                 conn.Close();
             }
-            //5 (fix this)
+            //5 
             else if(DropDownList1.SelectedValue == "Accounts + Subscribed Plans")
             {
                 Response.Write("Retrieving details for all accounts and their subscribed service plans..");
 
                 conn.Open();
 
-                SqlCommand accounts = new SqlCommand("Select * from allResolvedTickets", conn);
-                SqlDataReader rdr = accounts.ExecuteReader();
+                SqlCommand accounts = new SqlCommand("Account_Plan", conn);
+                accounts.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader rdr = accounts.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
                 GridView1.DataSource = rdr;
                 GridView1.DataBind();
                 conn.Close();
