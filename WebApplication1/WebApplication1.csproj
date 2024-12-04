@@ -72,6 +72,9 @@
     <Content Include="customer_homepage.aspx" />
     <Content Include="lists.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="login_customer.aspx" />
+    <Content Include="other_plans.aspx" />
+    <Content Include="Service_plans.aspx" />
     <Content Include="views.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -111,7 +114,28 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="login_customer.aspx.cs">
+      <DependentUpon>login_customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login_customer.aspx.designer.cs">
+      <DependentUpon>login_customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="other_plans.aspx.cs">
+      <DependentUpon>other_plans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="other_plans.aspx.designer.cs">
+      <DependentUpon>other_plans.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service_plans.aspx.cs">
+      <DependentUpon>Service_plans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service_plans.aspx.designer.cs">
+      <DependentUpon>Service_plans.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views.aspx.cs">
       <DependentUpon>views.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
