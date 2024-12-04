@@ -59,21 +59,55 @@
 
 
 
-      <div class="box">
-     <asp:Label ID="Label2" runat="server" Text=" technical support tickets"></asp:Label>
-     <br />
-          <br />
-     <asp:Button ID="Button3" runat="server" Text="Click Me" OnClick="other_serviceplan" />
-      </div>
-
-
-
        <div class="box">
-     <asp:Label ID="Label3" runat="server" Text="Benefits"></asp:Label>
+     <asp:Label ID="Label4" runat="server" Text="unresolvedtickets"></asp:Label>
      <br />
       <br />
-     <asp:Button ID="Button4" runat="server" Text="Click Me" OnClick="service_plan_direct" />
+     <asp:Button ID="Button1" runat="server" Text="Click Me" OnClick="UnresolvedTickets" />
     </div>
+
+
+
+           <div class="box">
+     <asp:Label ID="Label5" runat="server" Text="activeBenefits"></asp:Label>
+     <br />
+      <br />
+     <asp:Button ID="Button5" runat="server" Text="Click Me" OnClick="ActiveBenefits" />
+    </div>
+
+
+               <div class="box">
+     <asp:Label ID="Label6" runat="server" Text="HighestVoucherValue"></asp:Label>
+     <br />
+      <br />
+     <asp:Button ID="Button6" runat="server" Text="Click Me" OnClick="HighestVoucherValue" />
+    </div>
+
+
+                  <div class="box">
+    <asp:Label ID="Label7" runat="server" Text="RemainingAmount"></asp:Label>
+    <br />
+     <br />
+    <asp:Button ID="Button7" runat="server" Text="Click Me" OnClick="RemainingAmount" />
+   </div>
+
+
+    
+                  <div class="box">
+    <asp:Label ID="Label8" runat="server" Text="ExtraAmount"></asp:Label>
+    <br />
+     <br />
+    <asp:Button ID="Button8" runat="server" Text="Click Me" OnClick="ExtraAmount" />
+   </div>
+
+                    <div class="box">
+  <asp:Label ID="Label9" runat="server" Text="Top10SuccessfulPayments"></asp:Label>
+  <br />
+   <br />
+  <asp:Button ID="Button9" runat="server" Text="Click Me" OnClick="Top10SuccessfulPayments" />
+ </div>
+
+
 
 
     </div>

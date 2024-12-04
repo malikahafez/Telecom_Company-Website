@@ -57,6 +57,8 @@
         <div class ="div">
     <asp:PlaceHolder ID="myContainer" runat="server"></asp:PlaceHolder>
         </div>
+        <asp:GridView ID="otherplans" runat="server">
+        </asp:GridView>
     </form>
 </body>
 </html>

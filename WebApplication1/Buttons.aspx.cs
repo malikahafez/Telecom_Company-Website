@@ -1,31 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace WebApplication1
 {
-    public partial class customer_homepage : System.Web.UI.Page
+    public partial class Benefits : System.Web.UI.Page
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            string mobile = Session["mobile_num"] as string;
-            Response.Write(mobile);
-        }
-        protected void service_plan_direct(object sender, EventArgs e)
-        {
-            string mobile = Session["mobile_num"] as string;
-         
-            Session["mob"] = mobile;
-            Response.Redirect("Service_plans.aspx");
-        }
-        protected void other_serviceplan(object sender, EventArgs e)
-        {
-           
-            Response.Redirect("other_plans.aspx");
+
         }
 
         protected void ActiveBenefits(object sender, EventArgs e)
@@ -50,17 +40,16 @@ namespace WebApplication1
             Response.Redirect("RemainingAmountView.aspx");
         }
 
-
+    
         protected void ExtraAmount(object sender, EventArgs e)
         {
             Response.Redirect("ExtraAmountView.aspx");
         }
 
-
+    
         protected void Top10SuccessfulPayments(object sender, EventArgs e)
         {
             Response.Redirect("Top10SuccessfulPayments.aspx");
         }
-
     }
 }

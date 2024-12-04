@@ -11,7 +11,7 @@ namespace WebApplication1
 {
 
 
-    public partial class other_plans
+    public partial class No_of_unresolved_tickets
     {
 
         /// <summary>
@@ -24,21 +24,30 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// myContainer control.
+        /// NationalID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder myContainer;
+        protected global::System.Web.UI.WebControls.TextBox NationalID;
 
         /// <summary>
-        /// otherplans control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView otherplans;
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// gvTickets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvTickets;
     }
 }

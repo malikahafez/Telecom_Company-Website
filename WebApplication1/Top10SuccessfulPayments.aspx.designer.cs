@@ -11,7 +11,7 @@ namespace WebApplication1
 {
 
 
-    public partial class other_plans
+    public partial class Top10SuccessfulPayments
     {
 
         /// <summary>
@@ -24,21 +24,12 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// myContainer control.
+        /// gvPayments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder myContainer;
-
-        /// <summary>
-        /// otherplans control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView otherplans;
+        protected global::System.Web.UI.WebControls.GridView gvPayments;
     }
 }
