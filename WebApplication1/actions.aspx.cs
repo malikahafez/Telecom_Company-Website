@@ -19,13 +19,14 @@ namespace WebApplication1
         {
             Response.Redirect("admin_homepage.aspx");
         }
-        protected void selectedList(object sender, EventArgs e)
+        protected void selectedList1(object sender, EventArgs e)
         {
             string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
 
             if (DropDownList3.SelectedValue == "Remove benefits from an account")
             {
+               
                 Input1.Visible = true;
                 Input2.Visible = true;
                 mobileNo.Visible = true;
@@ -40,21 +41,66 @@ namespace WebApplication1
                 mobileNo.Visible = false;
                 planID.Visible = false;
                 Button1.Visible = false;
+                confirmation.Visible = false;
+                CheckBox1.Visible = false;
+                CheckBox2.Visible = false;
             }
         }
 
         protected void yes(object sender, EventArgs e)
         {
+            string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
+            SqlConnection conn = new SqlConnection(connStr);
+            conn.Open();
+            try
+            {
+                string mobile = mobileNo.Text;
 
+                int plan = Int16.Parse(planID.Text);
+
+                SqlCommand removing = new SqlCommand("Benefits_Account", conn);
+                removing.CommandType = System.Data.CommandType.StoredProcedure;
+                removing.Parameters.Add(new SqlParameter("@mobile_num", mobile));
+                removing.Parameters.Add(new SqlParameter("@plan_id", plan));
+                removing.ExecuteNonQuery();
+                conn.Close();
+                Response.Write("Successfully removed all benefits offered to the account from the plan");
+
+            }
+            catch (Exception)
+            {
+                Response.Write("<br/>Plan ID must be an integer less than 11 digits");
+            }
+             confirmation.Visible = false;
+            CheckBox1.Visible = false;
+            CheckBox2.Visible = false;
+            CheckBox1.Checked = false ;
+            CheckBox2.Checked = false;
+            Input1.Text = "";
+            Input2.Text = "";
         }
 
         protected void no(object sender, EventArgs e)
         {
+            Response.Write("Successfully cancelled action");
+            confirmation.Visible = false;
+            CheckBox1.Visible = false;
+            CheckBox2.Visible = false;
+            CheckBox1.Checked = false;
+            CheckBox2.Checked = false;
+            Input1.Text = "";
+            Input2.Text = "";
 
         }
 
         protected void Remove(object sender, EventArgs e)
         {
+           
+            confirmation.Visible = true;
+            CheckBox1.Visible = true;
+            CheckBox2.Visible = true;
+            
+
 
         }
     }
