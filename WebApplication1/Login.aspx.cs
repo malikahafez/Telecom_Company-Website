@@ -19,18 +19,23 @@ namespace WebApplication1
         {
             string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
-
-            int id = Int16.Parse(userID.Text);
-            string pass = password.Text;
-
-            if (id == 0 && pass.CompareTo("adminAccount") ==0)
+            try
             {
-                Session["user"] = id;
-                Response.Write("Welcome Admin");
-                Response.Redirect("admin_homepage.aspx");
-            }
-           
+                int id = Int16.Parse(userID.Text);
+                string pass = password.Text;
 
+                if (id == 0 && pass.CompareTo("adminAccount") == 0)
+                {
+                    Session["user"] = id;
+                    Response.Write("Welcome Admin");
+                    Response.Redirect("admin_homepage.aspx");
+                }
+
+            }
+            catch (Exception)
+            {
+                Response.Write("Make sure your user ID an integer less than 11 digits long");
+            }
             conn.Open();
             conn.Close();
 

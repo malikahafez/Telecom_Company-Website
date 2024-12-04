@@ -138,8 +138,7 @@ namespace WebApplication1
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (Input1.Text == "Input Plan ID" && Input2.Text == "Input Date") {
-                Response.Write("Listing all customer accounts subscribed to the given plan on the given date...");
+            if (Input1.Text == "Input Plan ID" && Input2.Text == "Input Date") {//6
                 string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
                 SqlConnection conn = new SqlConnection(connStr);
                 conn.Open();
@@ -155,17 +154,18 @@ namespace WebApplication1
                         SqlDataReader rdr = accounts.ExecuteReader();
                         GridView2.DataSource = rdr;
                         GridView2.DataBind();
-                    }
-                    catch (System.Data.SqlClient.SqlException)
+                    Response.Write("Listing all customer accounts subscribed to the given plan on the given date...");
+
+                }
+                catch (System.Data.SqlClient.SqlException)
                     {
-                        Response.Write("<br/>Plan ID must be an integer less than 11 digits");
+                        Response.Write("<br/>Plan ID must be a number less than 11 digits and Date must be in the form 'YYYY-MM-DD'");
                     }
                 conn.Close();
             }
             else if(Input1.Text == "Input Account Mobile Number" && Input2.Text == "Input Account ID")
-            {
-                Response.Write("Listing all SMS offers for the given account and given plan...");
-
+            {//9
+                
                 string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
                 SqlConnection conn = new SqlConnection(connStr);
                 conn.Open();
@@ -174,17 +174,26 @@ namespace WebApplication1
                 //string tvfCMD = "select * from dbo.Account_SMS_Offers ('12345678901')";
 
                 SqlCommand offers = new SqlCommand(tvfCMD, conn);
+                try
+                {
+                    //accounts.CommandType = System.Data.CommandType.StoredProcedure;
+                    SqlDataReader rdr = offers.ExecuteReader();
+                    GridView2.DataSource = rdr;
+                    GridView2.DataBind();
+                    Response.Write("Listing all SMS offers for the given account...");
 
-                //accounts.CommandType = System.Data.CommandType.StoredProcedure;
-                SqlDataReader rdr = offers.ExecuteReader();
-                GridView2.DataSource = rdr;
-                GridView2.DataBind();
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    Response.Write("<br/>mobile number must be an 11 digit number");
+
+                }
                 conn.Close();
+
             }
             else if(Input1.Text =="Input Account Mobile Number" && Input2.Text == "Input Date")
-            {
-                Response.Write("Listing total usage on all subscribed plans for the given account and from the given date...");
-
+            {//7
+                
                 string connStr = WebConfigurationManager.ConnectionStrings["Milestone2DB_24"].ToString();
                 SqlConnection conn = new SqlConnection(connStr);
                 conn.Open();
@@ -194,11 +203,19 @@ namespace WebApplication1
                 //string tvfCMD = select * from dbo.Account_Usage_Plan ('01234567895', '2023-05-01');
 
                 SqlCommand usage = new SqlCommand(tvfCMD, conn);
+                try
+                {
+                    //accounts.CommandType = System.Data.CommandType.StoredProcedure;
+                    SqlDataReader rdr = usage.ExecuteReader();
+                    GridView2.DataSource = rdr;
+                    GridView2.DataBind();
+                    Response.Write("Listing total usage on all subscribed plans for the given account and from the given date...");
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    Response.Write("<br/>mobile number must be an 11 digit number and Date must be in the form 'YYYY-MM-DD'");
 
-                //accounts.CommandType = System.Data.CommandType.StoredProcedure;
-                SqlDataReader rdr = usage.ExecuteReader();
-                GridView2.DataSource = rdr;
-                GridView2.DataBind();
+                }
                 conn.Close();
 
             }
