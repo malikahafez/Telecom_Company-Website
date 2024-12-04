@@ -11,7 +11,7 @@
         <div>
             <asp:Button ID="BackButton" runat="server" OnClick="backToHomepage" Text="Back to Homepage" />
             <br />
-            <asp:DropDownList ID="DropDownList3" runat="server" OnSelectedIndexChanged= "selectedList" Width="400px">
+            <asp:DropDownList ID="DropDownList3" runat="server" OnSelectedIndexChanged= "selectedList1" AutoPostBack="true" Width="400px">
                 <asp:ListItem Value = "0" Text ="Choose an action"></asp:ListItem>
                 <asp:ListItem Value = "Remove benefits from an account" Text = "Remove benefits from an account"></asp:ListItem>
             </asp:DropDownList>
@@ -29,9 +29,9 @@
         <asp:Label ID="confirmation" runat="server" Text="Are you sure you want to proceed with this action?" Visible="false"></asp:Label>
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:CheckBox ID="CheckBox1" runat="server" Text ="Yes" OnCheckedChanged ="yes" Visible="false" />
+            <asp:CheckBox ID="CheckBox1" runat="server" Text ="Yes" OnCheckedChanged ="yes" Visible="false" AutoPostBack="true" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:CheckBox ID="CheckBox2" runat="server" Text ="No" OnCheckedChanged ="no" Visible="false" />
+            <asp:CheckBox ID="CheckBox2" runat="server" Text ="No" OnCheckedChanged ="no" Visible="false" AutoPostBack="true" />
         </p>
     </form>
 </body>
