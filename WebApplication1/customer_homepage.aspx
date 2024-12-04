@@ -14,7 +14,7 @@
             text-align: center;
             margin-top: 50px;
             
-            background-color:aquamarine;
+            background-color:#588BAE;
         }
         .h2{
             align-content:center;
@@ -27,8 +27,12 @@
             display: inline-block;
             justify-content: center; /* Centers horizontally */
             align-items: center; 
-            width:800px; 
-            height: fit-content;
+            width:1500px; 
+            height: auto;
+            background-color:#363b72;
+        }
+        body{
+            background-color:#474984;
         }
     </style>
 </head>
@@ -54,6 +58,7 @@
       </div>
 
 
+
       <div class="box">
      <asp:Label ID="Label2" runat="server" Text=" technical support tickets"></asp:Label>
      <br />
@@ -62,13 +67,18 @@
       </div>
 
 
+
        <div class="box">
      <asp:Label ID="Label3" runat="server" Text="Benefits"></asp:Label>
      <br />
       <br />
      <asp:Button ID="Button4" runat="server" Text="Click Me" OnClick="service_plan_direct" />
     </div>
+
+
     </div>
+
+
     </form>
 </body>
 </html>
