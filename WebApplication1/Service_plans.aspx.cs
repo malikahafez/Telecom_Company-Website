@@ -71,9 +71,16 @@ namespace WebApplication1
 
             
         }
-        private void ServicePlanButton_Click(String planname)
+        protected void Active(object sender, EventArgs e)
         {
+            
+            Response.Redirect("Active_plans.aspx");
+        }
 
+        protected void Not_Subscribed_to(object sender, EventArgs e)
+        {
+            
+            Response.Redirect("other_plans.aspx");
         }
     }
 }

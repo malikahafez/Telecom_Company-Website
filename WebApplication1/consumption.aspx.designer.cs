@@ -11,7 +11,7 @@ namespace WebApplication1
 {
 
 
-    public partial class Service_plans
+    public partial class consumption
     {
 
         /// <summary>
@@ -24,22 +24,22 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// myContainer control.
+        /// plan_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder myContainer;
+        protected global::System.Web.UI.WebControls.Label plan_id;
 
         /// <summary>
-        /// Label1 control.
+        /// id_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox id_input;
 
         /// <summary>
         /// Button1 control.
@@ -51,21 +51,12 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Label2 control.
+        /// myContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
-        /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.PlaceHolder myContainer;
     }
 }

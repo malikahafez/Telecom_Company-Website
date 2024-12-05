@@ -23,7 +23,7 @@ namespace WebApplication1
             ///2
             if(DropDownList1.SelectedValue == "Customer Profiles + Active Accounts")
             {
-                Response.Write("Retrieving details for all Customer Profiles and their active accounts..");
+                Response.Write("Successfully retrieved details for all Customer Profiles and their active accounts..");
 
                 conn.Open();
 
@@ -49,7 +49,7 @@ namespace WebApplication1
             //3
             else if(DropDownList1.SelectedValue == "Physical Stores + Vouchers")
             {
-                Response.Write("Retrieving details for all physical stores and their redeemed vouchers..");
+                Response.Write("Successfully retrieved details for all physical stores and their redeemed vouchers..");
 
                 conn.Open();
 
@@ -62,7 +62,7 @@ namespace WebApplication1
             //4
             else if(DropDownList1.SelectedValue == "Resolved Tickets")
             {
-                Response.Write("Retrieving details for all resolved tickets..");
+                Response.Write("Successfully retrieved details for all resolved tickets..");
 
                 conn.Open();
 
@@ -75,7 +75,7 @@ namespace WebApplication1
             //5 
             else if(DropDownList1.SelectedValue == "Accounts + Subscribed Plans")
             {
-                Response.Write("Retrieving details for all accounts and their subscribed service plans..");
+                Response.Write("Successfully retrieved details for all accounts and their subscribed service plans..");
 
                 conn.Open();
 
