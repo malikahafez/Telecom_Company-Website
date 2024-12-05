@@ -68,11 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="actions.aspx" />
+    <Content Include="Active_plans.aspx" />
     <Content Include="admin_homepage.aspx" />
     <Content Include="customer_homepage.aspx" />
     <Content Include="lists.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="login_customer.aspx" />
+    <Content Include="My_Wallet.aspx" />
     <Content Include="other_plans.aspx" />
     <Content Include="Service_plans.aspx" />
     <Content Include="views.aspx" />
@@ -85,6 +87,13 @@
     </Compile>
     <Compile Include="actions.aspx.designer.cs">
       <DependentUpon>actions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Active_plans.aspx.cs">
+      <DependentUpon>Active_plans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Active_plans.aspx.designer.cs">
+      <DependentUpon>Active_plans.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin_homepage.aspx.cs">
       <DependentUpon>admin_homepage.aspx</DependentUpon>
@@ -120,6 +129,13 @@
     </Compile>
     <Compile Include="login_customer.aspx.designer.cs">
       <DependentUpon>login_customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="My_Wallet.aspx.cs">
+      <DependentUpon>My_Wallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My_Wallet.aspx.designer.cs">
+      <DependentUpon>My_Wallet.aspx</DependentUpon>
     </Compile>
     <Compile Include="other_plans.aspx.cs">
       <DependentUpon>other_plans.aspx</DependentUpon>
