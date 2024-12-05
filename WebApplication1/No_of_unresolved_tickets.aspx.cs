@@ -28,13 +28,38 @@ namespace WebApplication1
             unrestickets.CommandType = CommandType.StoredProcedure;
             unrestickets.Parameters.Add(new SqlParameter("@NID", id));
             conn.Open();
-            SqlDataReader reader=unrestickets.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(reader);
-            reader.Close();
-            gvTickets.DataSource = dt;
-            gvTickets.DataBind();
-            conn.Close();
+            SqlDataReader reader = unrestickets.ExecuteReader(); 
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                reader.Close();
+           
+                
+                    // Check if the NationalID exists in the database
+                    SqlCommand validateID = new SqlCommand(
+                        "SELECT COUNT(*) FROM customer_account WHERE nationalID = @NID", conn);
+                    validateID.Parameters.Add(new SqlParameter("@NID", id));
+                    int idCount = (int)validateID.ExecuteScalar();
+
+                    if (idCount > 0)
+                    {
+                        gvTickets.DataSource = dt;
+                        gvTickets.DataBind();
+                        ErrorMessage.Visible = false;
+            }
+                    else
+                    {
+                        gvTickets.DataSource = null;
+                        gvTickets.DataBind();
+                        ErrorMessage.Text = "Invalid National ID. No matching records found.";
+                        ErrorMessage.Visible = true;
+                    }
+
+
+
+                    //gvTickets.DataSource = dt;
+                    //gvTickets.DataBind();
+                    conn.Close();
+                }
+            }
         }
-    }
-}
+    

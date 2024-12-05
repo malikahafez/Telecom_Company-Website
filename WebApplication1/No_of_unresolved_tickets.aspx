@@ -16,6 +16,8 @@
             <asp:Button ID="Button1" runat="server" OnClick="ShowUnresolvedTickets" Text="ShowUnresolvedTickets" />
         </p>
       <asp:GridView ID="gvTickets" runat="server" AutoGenerateColumns="True"></asp:GridView>
+      <asp:Label ID="ErrorMessage" runat="server" ForeColor="Red"></asp:Label>
+
     </form>
 </body>
 </html>

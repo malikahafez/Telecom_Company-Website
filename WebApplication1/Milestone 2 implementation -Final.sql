@@ -19,6 +19,7 @@ date_of_birth date
 )
 
 
+
 create table customer_account(
 mobileNo char(11) primary key,
 pass varchar(50),
@@ -74,7 +75,6 @@ status varchar(50) check(status ='successful' or status='rejected' or status='pe
 mobileNo Char(11),
 FOREIGN KEY (mobileNo) REFERENCES customer_account (mobileNo)
 )
-
 
 
 
