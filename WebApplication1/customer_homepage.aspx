@@ -85,31 +85,7 @@
 
 
 
-      <div class="box">
-     <asp:Label ID="Label2" runat="server" Text=" technical support tickets"></asp:Label>
-     <br />
-          <br />
-     <asp:Button ID="Button3" runat="server" Text="Click Me" OnClick="other_serviceplan" />
-      </div>
-
-
-
-       <div class="box">
-     <asp:Label ID="Label3" runat="server" Text="Benefits"></asp:Label>
-     <br />
-      <br />
-     <asp:Button ID="Button4" runat="server" Text="Click Me" OnClick="service_plan_direct" />
-    </div>
-
-
-       <div class="box">
-      <asp:Label ID="Label4" runat="server" Text="Benefits"></asp:Label>
-      <br />
-      <br />
-      <asp:Button ID="Button1" runat="server" Text="Click Me" OnClick="service_plan_direct" />
-      </div>
-
-    </div>
+     
 
 
     </form>
